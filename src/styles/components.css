@@ -1,0 +1,38 @@
+/* ========= SURFACES ========= */
+.surface {
+  background-color: var(--bg-surface);
+  background-image: var(--gradient-surface), var(--noise);
+  background-size:
+    cover,
+    200px 200px;
+  box-shadow: var(--shadow-soft);
+}
+
+.surface--elevated {
+  background-color: var(--bg-elevated);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* ========= GOLD ACCENT ========= */
+.gold-accent {
+  color: var(--gold-main);
+}
+
+.gold-glow {
+  box-shadow: var(--glow-gold-soft);
+}
+
+.gold-glow--strong {
+  box-shadow: var(--glow-gold-strong);
+}
+
+/* ========= INTERACTIVE READINESS ========= */
+.interactive {
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.interactive:hover {
+  transform: translateY(-2px);
+}

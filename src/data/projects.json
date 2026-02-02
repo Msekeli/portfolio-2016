@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Portfolio Website",
+    "description": "A modern, responsive portfolio built with React and Tailwind CSS.",
+    "tech": ["React", "Vite", "Tailwind"],
+    "demo": "#",
+    "repo": "#",
+    "image": "/placeholders/project.png"
+  },
+  {
+    "title": "Savings Application",
+    "description": "A cloud-hosted savings tracker with secure authentication.",
+    "tech": ["C#", ".NET", "Azure"],
+    "demo": "#",
+    "repo": "#",
+    "image": "/placeholders/project.png"
+  },
+  {
+    "title": "Reward Chest App",
+    "description": "Interactive reward system with animated user feedback.",
+    "tech": ["JavaScript", "HTML", "CSS"],
+    "demo": "#",
+    "repo": "#",
+    "image": "/placeholders/project.png"
+  },
+  {
+    "title": "Task Manager",
+    "description": "A productivity app to manage and track daily tasks.",
+    "tech": ["React", "Node.js", "MongoDB"],
+    "demo": "#",
+    "repo": "#",
+    "image": "/placeholders/project.png"
+  },
+  {
+    "title": "E-commerce Platform",
+    "description": "A full-featured e-commerce website with payment integration.",
+    "tech": ["Next.js", "Stripe", "PostgreSQL"],
+    "demo": "#",
+    "repo": "#",
+    "image": "/placeholders/project.png"
+  },
+  {
+    "title": "Blog CMS",
+    "description": "A content management system for blogging with rich text editing.",
+    "tech": ["Django", "SQLite", "Bootstrap"],
+    "demo": "#",
+    "repo": "#",
+    "image": "/placeholders/project.png"
+  }
+]
