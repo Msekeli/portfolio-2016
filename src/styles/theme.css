@@ -1,0 +1,47 @@
+:root {
+  /* ========= COLORS ========= */
+  --bg-primary: #0b1220;
+  --bg-surface: #121a2e;
+  --bg-elevated: #16213a;
+
+  --text-primary: #f5f7fa;
+  --text-secondary: #b8c1d9;
+  --text-muted: #7f89a6;
+
+  --gold-main: #d4af37;
+  --gold-soft: #e6c96a;
+  --gold-deep: #b8962e;
+
+  /* ========= GRADIENTS ========= */
+  --gradient-surface: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(0, 0, 0, 0.15)
+  );
+
+  --gradient-gold: linear-gradient(
+    135deg,
+    var(--gold-soft),
+    var(--gold-main),
+    var(--gold-deep)
+  );
+
+  /* ========= SHADOWS ========= */
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.35);
+
+  --shadow-elevated: 0 8px 40px rgba(0, 0, 0, 0.45);
+
+  /* ========= GOLD GLOW ========= */
+  --glow-gold-soft: 0 0 20px rgba(212, 175, 55, 0.25);
+
+  --glow-gold-strong: 0 0 40px rgba(212, 175, 55, 0.45);
+
+  /* ========= NOISE TEXTURE ========= */
+  --noise: repeating-radial-gradient(
+    circle at 0 0,
+    rgba(255, 255, 255, 0.03) 0,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
