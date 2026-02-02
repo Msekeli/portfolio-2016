@@ -18,6 +18,8 @@
 //     </div>
 //   );
 // }
+import Footer from "./Footer";
+
 export default function AppShell({ top, nav, children }) {
   return (
     <div className="h-screen flex">
@@ -27,7 +29,12 @@ export default function AppShell({ top, nav, children }) {
         {top}
 
         {/* SINGLE scroll container */}
-        <main className="flex-1 overflow-y-auto">{children}</main>
+        <main className="flex-1 overflow-y-auto snap-y snap-mandatory">
+          {children}
+        </main>
+
+        {/* Desktop-only footer */}
+        <Footer />
       </div>
     </div>
   );

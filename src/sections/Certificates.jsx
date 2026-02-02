@@ -14,7 +14,7 @@ export default function Certificates() {
   const visibleCertificates = showAll ? certificates : certificates.slice(0, 6);
 
   return (
-    <Section>
+    <Section id="certificates">
       <SectionTitle>Certificates</SectionTitle>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

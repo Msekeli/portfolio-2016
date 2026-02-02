@@ -4,7 +4,7 @@ import Button from "../components/Button";
 
 export default function Hero() {
   return (
-    <Section>
+    <Section id="home">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Text block */}
         <div className="space-y-6">

@@ -40,3 +40,6 @@ small {
 ::selection {
   background: rgba(212, 175, 55, 0.25);
 }
+html {
+  scroll-behavior: smooth;
+}

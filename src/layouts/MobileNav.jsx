@@ -1,42 +1,39 @@
 import Icon from "../components/Icon";
+import useActiveSection from "../hooks/useActiveSection";
 
 const items = [
-  { label: "Home", icon: "Home" },
-  { label: "About", icon: "User" },
-  { label: "Certificates", icon: "Award" },
-  { label: "Projects", icon: "FolderGit2" },
-  { label: "Contact", icon: "Mail" },
+  { id: "home", label: "Home", icon: "Home", href: "#home" },
+  { id: "about", label: "About", icon: "User", href: "#about" },
+  {
+    id: "certificates",
+    label: "Certificates",
+    icon: "Award",
+    href: "#certificates",
+  },
+  { id: "projects", label: "Projects", icon: "FolderGit2", href: "#projects" },
+  { id: "contact", label: "Contact", icon: "Mail", href: "#contact" },
 ];
 
-const activeItem = "Home"; // TEMP
-
 export default function MobileNav() {
+  const activeId = useActiveSection(items.map((i) => i.id));
+
   return (
-    <nav
-      className="
-        fixed bottom-0 inset-x-0 lg:hidden
-        h-16
-        pb-[env(safe-area-inset-bottom)]
-        surface
-        border-t border-gold-main/20
-      "
-    >
-      <div className="h-full flex items-center justify-around">
-        {items.map(({ label, icon }) => {
-          const isActive = label === activeItem;
+    <nav className="fixed bottom-0 inset-x-0 md:hidden h-16 surface border-t border-white/5">
+      <div className="h-full flex justify-around items-center">
+        {items.map(({ id, label, icon, href }) => {
+          const isActive = activeId === id;
 
           return (
-            <div
-              key={label}
-              className={`
-                w-10 h-10 rounded-full
-                flex items-center justify-center
-                ${isActive ? "text-gold-main gold-glow" : "text-text-muted"}
-                transition-colors
-              `}
+            <a
+              key={id}
+              href={href}
+              className={`flex flex-col items-center ${
+                isActive ? "text-gold-main" : "text-text-muted"
+              }`}
             >
               <Icon name={icon} />
-            </div>
+              <span className="text-xs mt-1">{label}</span>
+            </a>
           );
         })}
       </div>
