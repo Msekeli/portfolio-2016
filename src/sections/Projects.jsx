@@ -29,7 +29,7 @@ export default function Projects() {
                   src={project.image}
                   alt={project.title}
                   className="
-                    w-full aspect-[16/10] object-cover
+                    w-full aspect-16/10 object-cover
                     transition-transform duration-300
                     group-hover:scale-105
                   "

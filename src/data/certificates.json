@@ -1,11 +1,11 @@
 [
-  { "id": 1, "image": "/certs/aws.png" },
-  { "id": 2, "image": "/certs/azure.png" },
-  { "id": 3, "image": "/certs/meta.png" },
-  { "id": 4, "image": "/certs/html.png" },
-  { "id": 5, "image": "/certs/css.png" },
-  { "id": 6, "image": "/certs/js.png" },
-  { "id": 7, "image": "/certs/react.png" },
-  { "id": 8, "image": "/certs/git.png" },
-  { "id": 9, "image": "/certs/aws-advanced.png" }
+  { "id": 1, "image": "/certs/cert1.png" },
+  { "id": 2, "image": "/certs/cert2.png" },
+  { "id": 3, "image": "/certs/cert3.png" },
+  { "id": 4, "image": "/certs/cert4.jpg" },
+  { "id": 5, "image": "/certs/cert5.png" },
+  { "id": 6, "image": "/certs/cert6.jpg" },
+  { "id": 7, "image": "/certs/cert7.png" },
+  { "id": 8, "image": "/certs/cert8.jpg" },
+  { "id": 9, "image": "/certs/cert4.jpg" }
 ]

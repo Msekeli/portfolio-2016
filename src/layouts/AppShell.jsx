@@ -14,7 +14,10 @@ export default function AppShell({ top, nav, children }) {
         {/* Content column */}
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Only scroll container */}
-          <main className="flex-1 overflow-y-auto snap-y snap-mandatory">
+          <main
+            id="scroll-container"
+            className="flex-1 overflow-y-auto snap-y snap-mandatory"
+          >
             {children}
           </main>
 
