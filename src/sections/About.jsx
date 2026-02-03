@@ -6,13 +6,13 @@ import Surface from "../components/Surface";
 import items from "../data/about.json";
 
 export default function About() {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(0);
 
   return (
     <Section id="about">
       <SectionTitle>About</SectionTitle>
 
-      <div className="space-y-4 max-w-3xl">
+      <div className="space-y-4">
         {items.map((item, index) => {
           const open = openIndex === index;
 
@@ -20,18 +20,37 @@ export default function About() {
             <Surface
               key={item.q}
               elevated={open}
-              className={open ? "gold-glow" : ""}
+              className={`
+                transition-all
+                ${open ? "gold-glow border border-gold-main/30" : ""}
+              `}
             >
               <button
                 onClick={() => setOpenIndex(open ? null : index)}
-                className="w-full text-left flex justify-between items-center"
+                className="
+                  w-full text-left
+                  flex justify-between items-start gap-4
+                  cursor-pointer
+                  transition-all
+                  hover:translate-x-0.5
+                "
               >
-                <span className="font-medium">{item.q}</span>
-                <span className="text-text-muted">{open ? "–" : "+"}</span>
+                <span className="font-medium text-text-primary">{item.q}</span>
+
+                <span
+                  className={`
+                    text-lg leading-none
+                    transition-colors
+                    ${open ? "text-gold-main" : "text-text-muted"}
+                    hover:text-gold-main
+                  `}
+                >
+                  {open ? "–" : "+"}
+                </span>
               </button>
 
               {open && (
-                <div className="mt-4">
+                <div className="mt-3 md:mt-4">
                   <Text variant="secondary">{item.a}</Text>
                 </div>
               )}

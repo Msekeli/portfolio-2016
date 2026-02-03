@@ -5,7 +5,6 @@ export default function Section({ children, id }) {
     <section
       id={id}
       className="
-        min-h-screen
         snap-start
         pt-8 md:pt-[7vh]
         pb-24

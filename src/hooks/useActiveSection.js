@@ -4,33 +4,19 @@ export default function useActiveSection(ids) {
   const [activeId, setActiveId] = useState(ids[0]);
 
   useEffect(() => {
-    const scrollContainer = document.querySelector("main");
-    if (!scrollContainer) return;
-
-    const visibleSections = new Map();
-
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            visibleSections.set(entry.target.id, entry);
-          } else {
-            visibleSections.delete(entry.target.id);
-          }
-        });
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
 
-        if (visibleSections.size > 0) {
-          const closest = [...visibleSections.values()].sort(
-            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top,
-          )[0];
-
-          setActiveId(closest.target.id);
+        if (visible.length > 0) {
+          setActiveId(visible[0].target.id);
         }
       },
       {
-        root: scrollContainer,
-        threshold: 0.1,
-        rootMargin: "0px 0px -64px 0px",
+        root: null,
+        threshold: [0.1, 0.25, 0.5],
       },
     );
 

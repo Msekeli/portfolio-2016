@@ -18,8 +18,12 @@ export default function Button({
   };
 
   const baseClasses = `
-    px-6 py-3 rounded-full
-    interactive cursor-pointer
+    px-4 py-2
+    rounded-md
+    whitespace-nowrap
+    interactive
+    cursor-pointer
+    text-sm
   `;
 
   const variants = {

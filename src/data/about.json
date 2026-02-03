@@ -1,14 +1,26 @@
 [
   {
-    "q": "Who are you?",
-    "a": "I am a software developer focused on building clean, scalable, and user-friendly web experiences."
+    "q": "Overview",
+    "a": "I am a Full-Stack Software Developer with over two years of experience building modern, scalable, and user-focused web applications. I work across the stack using React.js, Blazor, and ASP.NET Core, with a strong focus on clean architecture, maintainable code, and thoughtful user experiences."
   },
   {
-    "q": "What do you specialize in?",
-    "a": "I specialize in React, modern CSS, and building structured front-end systems that scale.derz"
+    "q": "Programming Journey",
+    "a": "I began my programming journey in 2018 with Java through a CapaCiTi training program. In 2019, I transitioned into front-end development, learning HTML, CSS, and JavaScript through platforms such as W3Schools, freeCodeCamp, and Udemy. In 2020, I returned to CapaCiTi to further my studies in Computer Programming and AWS, strengthening both my development and cloud fundamentals."
   },
   {
-    "q": "What drives your work?",
-    "a": "I enjoy turning complex ideas into simple, elegant interfaces that feel intentional and calm."
+    "q": "Development Experience",
+    "a": "I have worked as a Junior Full-Stack Developer using React.js on the front end and C#.NET on the back end. My experience includes translating Figma designs into responsive interfaces, integrating RESTful APIs, managing relational databases, and troubleshooting production issues to ensure reliable application performance."
+  },
+  {
+    "q": "Professional Background",
+    "a": "At Digital Gaming Corporations SA, I contributed to acquisition websites for Betway and JackpotCity, where I helped develop and maintain features such as the Bonus Wheel and Maintenance Pages. I collaborated closely with designers and developers, coded from Figma designs, and fixed bugs using ASP.NET Core and Next.js. I have also gained valuable industry experience through internships at Mezzanine Ware and RLabs."
+  },
+  {
+    "q": "Skills and Education",
+    "a": "My technical skill set includes React.js, Blazor, JavaScript, TypeScript, HTML, CSS, Tailwind CSS, Bootstrap, C#, ASP.NET Core, Azure Functions, SQL Server, and PostgreSQL. I am experienced with Git, GitHub, Azure DevOps, Jira, Postman, and Requestly, as well as cloud platforms such as Azure and AWS. I hold an NQF Level 5 qualification in IT Systems Development from CTU Training Solutions, achieving an average of 84%, and I am currently completing a Diploma in IT Software Development."
+  },
+  {
+    "q": "Beyond Code",
+    "a": "I am a talkative, creative, and innovative individual who enjoys challenging myself and exploring new ideas. Outside of development, I spend time weight lifting at the gym, following political developments, and relaxing with movies, WWE, and Got Talent shows. These interests fuel my curiosity, discipline, and continuous drive to improve both personally and professionally."
   }
 ]
