@@ -24,7 +24,7 @@ export default function Hero() {
 
           {/* Tech stack tag */}
           {Array.isArray(hero.techStack) && (
-            <div className="pt-2">
+            <div className="pt-2 hidden md:block">
               <span className="tag">
                 <span className="tag-label">{hero.techStackLabel}</span>
                 <span className="tag-value">{hero.techStack.join(" · ")}</span>
