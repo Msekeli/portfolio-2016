@@ -21,7 +21,7 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   background-image: var(--noise);
-  background-size: 200px 200px;
+  background-size: 300px 300px;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,7 +39,4 @@ small {
 /* ========= SELECTION ========= */
 ::selection {
   background: rgba(212, 175, 55, 0.25);
-}
-html {
-  scroll-behavior: smooth;
 }

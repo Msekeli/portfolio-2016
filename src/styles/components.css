@@ -1,38 +1,79 @@
 /* ========= SURFACES ========= */
 .surface {
   background-color: var(--bg-surface);
-  background-image: var(--gradient-surface), var(--noise);
-  background-size:
-    cover,
-    200px 200px;
+  background-image: var(--gradient-surface);
   box-shadow: var(--shadow-soft);
 }
 
-.surface--elevated {
+.elevated {
   background-color: var(--bg-elevated);
   box-shadow: var(--shadow-elevated);
 }
 
-/* ========= GOLD ACCENT ========= */
-.gold-accent {
-  color: var(--gold-main);
+/* ========= INTERACTIVE ========= */
+.interactive {
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
+.interactive:hover {
+  transform: translateY(-1px);
+}
+
+/* ========= GOLD EMPHASIS ========= */
 .gold-glow {
   box-shadow: var(--glow-gold-soft);
 }
 
-.gold-glow--strong {
+.gold-glow-strong {
   box-shadow: var(--glow-gold-strong);
 }
 
-/* ========= INTERACTIVE READINESS ========= */
-.interactive {
-  transition:
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
+/* ========= SECTION TITLES ========= */
+.section-title {
+  color: var(--gold-main);
+  letter-spacing: 0.04em;
 }
 
-.interactive:hover {
-  transform: translateY(-2px);
+.section-title-soft {
+  color: var(--gold-soft);
+}
+/* ========= GOLD ACCENT (LEGACY + GLOBAL) ========= */
+.gold-accent {
+  color: var(--gold-main);
+  letter-spacing: 0.04em;
+}
+
+/* ========= TAG ========= */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+
+  background-color: var(--bg-surface);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+
+  box-shadow:
+    var(--shadow-soft),
+    0 0 12px rgba(212, 175, 55, 0.15);
+
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+/* Label inside tag */
+.tag-label {
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+/* Stack text inside tag */
+.tag-value {
+  color: var(--gold-soft);
 }

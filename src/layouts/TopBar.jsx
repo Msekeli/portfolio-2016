@@ -2,8 +2,8 @@ import Icon from "../components/Icon";
 
 export default function TopBar() {
   return (
-    <header className="w-full surface border-b border-gold-main/20 gold-glow">
-      <div className="h-14 flex items-center justify-between pl-15 pr-15">
+    <header className="w-screen relative left-1/2 -translate-x-1/2 surface border-b border-gold-main/20">
+      <div className="h-14 flex items-center justify-between px-[clamp(1rem,9vw,10%)]">
         <span className="font-medium tracking-wide text-text-primary">
           MSEKELI
         </span>

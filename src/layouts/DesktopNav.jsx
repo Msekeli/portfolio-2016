@@ -2,39 +2,41 @@ import Icon from "../components/Icon";
 import useActiveSection from "../hooks/useActiveSection";
 
 const items = [
-  { id: "home", label: "Home", icon: "Home", href: "#home" },
-  { id: "about", label: "About", icon: "User", href: "#about" },
-  {
-    id: "certificates",
-    label: "Certificates",
-    icon: "Award",
-    href: "#certificates",
-  },
-  { id: "projects", label: "Projects", icon: "FolderGit2", href: "#projects" },
-  { id: "contact", label: "Contact", icon: "Mail", href: "#contact" },
+  { id: "home", label: "Home", icon: "Home" },
+  { id: "about", label: "About", icon: "User" },
+  { id: "certificates", label: "Certificates", icon: "Award" },
+  { id: "projects", label: "Projects", icon: "FolderGit2" },
+  { id: "contact", label: "Contact", icon: "Mail" },
 ];
 
 export default function DesktopNav() {
   const activeId = useActiveSection(items.map((i) => i.id));
 
+  const handleClick = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    el.scrollIntoView({ behavior: "smooth" });
+    history.replaceState(null, "", location.pathname);
+  };
+
   return (
     <aside className="hidden md:flex w-24">
-      <div className="mt-24 ml-4 surface rounded-2xl p-3 flex flex-col gap-4 gold-glow">
-        {items.map(({ id, label, icon, href }) => {
+      <div className="mt-24 surface rounded-2xl p-3 flex flex-col gap-4 gold-glow max-h-105 justify-center">
+        {items.map(({ id, label, icon }) => {
           const isActive = activeId === id;
 
           return (
-            <a
+            <button
               key={id}
-              href={href}
+              onClick={() => handleClick(id)}
               className="group relative flex justify-center"
             >
               <div
                 className={`
                   w-12 h-12 rounded-full
                   flex items-center justify-center
-                  border
-                  interactive
+                  border interactive
                   ${
                     isActive
                       ? "border-gold-main text-gold-main gold-glow"
@@ -48,18 +50,16 @@ export default function DesktopNav() {
               <span
                 className="
                   absolute left-14 top-1/2 -translate-y-1/2
-                  px-3 py-1 rounded-md
-                  surface
+                  px-3 py-1 rounded-md surface
                   text-text-primary text-sm
                   opacity-0 translate-x-2
                   group-hover:opacity-100 group-hover:translate-x-0
-                  transition-all
-                  whitespace-nowrap
+                  transition-all whitespace-nowrap
                 "
               >
                 {label}
               </span>
-            </a>
+            </button>
           );
         })}
       </div>
