@@ -1,30 +1,49 @@
 import Section from "../components/Section";
 import Text from "../components/Text";
 import Button from "../components/Button";
+import hero from "../data/hero.json";
 
 export default function Hero() {
   return (
-    <Section id="home">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <Section id="home" fullHeight>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Text block */}
         <div className="space-y-6">
-          <Text variant="secondary">Hi, I’m</Text>
+          <Text variant="secondary">{hero.greeting}</Text>
 
           <h1 className="text-4xl md:text-5xl font-semibold gold-accent">
-            Msekeli Mkwibiso
+            {hero.name}
           </h1>
 
-          <Text variant="secondary">
-            I bring ideas to life through innovative and visually appealing web
-            solutions.
-          </Text>
+          {/* Headline / role */}
+          <h2 className="text-xl md:text-2xl font-medium text-text-secondary">
+            {hero.headline}
+          </h2>
 
-          <Button>View My Work</Button>
+          <Text>{hero.description}</Text>
+
+          {/* Tech stack tag */}
+          {Array.isArray(hero.techStack) && (
+            <div className="pt-2 hidden md:block">
+              <span className="tag">
+                <span className="tag-label">{hero.techStackLabel}</span>
+                <span className="tag-value">{hero.techStack.join(" · ")}</span>
+              </span>
+            </div>
+          )}
+
+          <Button to="projects">{hero.cta}</Button>
         </div>
 
-        {/* Image block — MUST be visible */}
-        <div className="w-full flex justify-center">
-          <div className="w-64 h-80 surface rounded-2xl border border-red-500" />
+        {/* Image block */}
+        <div className="w-full">
+          <div className="w-full surface rounded-2xl gold-glow p-6">
+            <img
+              src="/images/hero.png"
+              alt="Hero illustration"
+              className="w-full h-auto"
+            />
+          </div>
         </div>
       </div>
     </Section>

@@ -6,36 +6,53 @@ import Surface from "../components/Surface";
 import items from "../data/about.json";
 
 export default function About() {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(0);
 
   return (
     <Section id="about">
       <SectionTitle>About</SectionTitle>
 
-      <div className="space-y-4 max-w-3xl">
+      <div className="space-y-4">
         {items.map((item, index) => {
           const open = openIndex === index;
 
           return (
-            <Surface
-              key={item.q}
-              elevated={open}
-              className={open ? "gold-glow" : ""}
-            >
-              <button
-                onClick={() => setOpenIndex(open ? null : index)}
-                className="w-full text-left flex justify-between items-center"
+            <div key={item.q}>
+              <Surface
+                elevated={open}
+                className={open ? "gold-glow border border-gold-main/30" : ""}
               >
-                <span className="font-medium">{item.q}</span>
-                <span className="text-text-muted">{open ? "–" : "+"}</span>
-              </button>
+                <button
+                  onClick={() => setOpenIndex(open ? null : index)}
+                  className="
+                    w-full px-4 py-3
+                    flex justify-between items-start gap-4
+                    text-left
+                    cursor-pointer
+                  "
+                >
+                  <span className="font-medium text-text-primary">
+                    {item.q}
+                  </span>
 
-              {open && (
-                <div className="mt-4">
-                  <Text variant="secondary">{item.a}</Text>
-                </div>
-              )}
-            </Surface>
+                  <span
+                    className={
+                      open
+                        ? "text-gold-main text-lg leading-none"
+                        : "text-text-muted text-lg leading-none"
+                    }
+                  >
+                    {open ? "–" : "+"}
+                  </span>
+                </button>
+
+                {open && (
+                  <div className="px-4 pb-4">
+                    <Text variant="secondary">{item.a}</Text>
+                  </div>
+                )}
+              </Surface>
+            </div>
           );
         })}
       </div>

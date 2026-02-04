@@ -5,7 +5,7 @@
     "tech": ["React", "Vite", "Tailwind"],
     "demo": "#",
     "repo": "#",
-    "image": "/placeholders/project.png"
+    "image": "/images/mysite.png"
   },
   {
     "title": "Savings Application",
@@ -13,7 +13,7 @@
     "tech": ["C#", ".NET", "Azure"],
     "demo": "#",
     "repo": "#",
-    "image": "/placeholders/project.png"
+    "image": "/images/mysite.png"
   },
   {
     "title": "Reward Chest App",
@@ -21,7 +21,7 @@
     "tech": ["JavaScript", "HTML", "CSS"],
     "demo": "#",
     "repo": "#",
-    "image": "/placeholders/project.png"
+    "image": "/images/mysite.png"
   },
   {
     "title": "Task Manager",
@@ -29,7 +29,7 @@
     "tech": ["React", "Node.js", "MongoDB"],
     "demo": "#",
     "repo": "#",
-    "image": "/placeholders/project.png"
+    "image": "/images/mysite.png"
   },
   {
     "title": "E-commerce Platform",
@@ -37,7 +37,7 @@
     "tech": ["Next.js", "Stripe", "PostgreSQL"],
     "demo": "#",
     "repo": "#",
-    "image": "/placeholders/project.png"
+    "image": "/images/mysite.png"
   },
   {
     "title": "Blog CMS",
@@ -45,6 +45,6 @@
     "tech": ["Django", "SQLite", "Bootstrap"],
     "demo": "#",
     "repo": "#",
-    "image": "/placeholders/project.png"
+    "image": "/images/mysite.png"
   }
 ]

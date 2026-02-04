@@ -15,38 +15,49 @@ export default function Projects() {
         {projects.map((project) => (
           <Surface
             key={project.title}
-            className="group interactive hover:gold-glow"
+            className="
+              group
+              transition-all
+              hover:gold-glow
+              hover:border hover:border-gold-main/30
+            "
           >
-            <div className="space-y-5">
+            <div className="space-y-4">
               {/* Image */}
-              <div className="relative overflow-hidden rounded-xl">
+              <div className="relative overflow-hidden rounded-lg">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="
-                    w-full aspect-4/3 object-cover
-                    transform transition-transform duration-300
+                    w-full aspect-16/10 object-cover
+                    transition-transform duration-300
                     group-hover:scale-105
                   "
                 />
               </div>
 
               {/* Text */}
-              <div className="space-y-3">
-                <h3 className="text-lg font-medium">{project.title}</h3>
+              <div className="space-y-2">
+                <h3 className="text-base font-medium text-text-primary">
+                  {project.title}
+                </h3>
 
-                <Text variant="secondary">{project.description}</Text>
+                <Text variant="secondary" className="text-sm leading-relaxed">
+                  {project.description}
+                </Text>
               </div>
 
-              {/* Tech */}
-              <div className="flex flex-wrap gap-2">
+              {/* Tech stack */}
+              <div className="flex flex-wrap gap-2 pt-1">
                 {project.tech.map((item) => (
                   <span
                     key={item}
                     className="
-                      px-3 py-1 rounded-full text-sm
-                      border border-gold-main/40
-                      text-gold-main
+                      px-2.5 py-1
+                      text-xs
+                      rounded-md
+                      border border-gold-main/30
+                      text-gold-soft
                     "
                   >
                     {item}
@@ -55,15 +66,15 @@ export default function Projects() {
               </div>
 
               {/* Actions */}
-              <div className="flex gap-3 pt-2">
-                <Button>
+              <div className="flex gap-3 pt-3">
+                <Button variant="primary">
                   <span className="flex items-center gap-2">
                     <Icon name="ExternalLink" />
                     Live Demo
                   </span>
                 </Button>
 
-                <Button>
+                <Button variant="secondary">
                   <span className="flex items-center gap-2">
                     <Icon name="Github" />
                     Source Code

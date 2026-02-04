@@ -1,14 +1,18 @@
 [
   {
-    "q": "Who are you?",
-    "a": "I am a software developer focused on building clean, scalable, and user-friendly web experiences."
+    "q": "Professional Overview",
+    "a": "I’m a software engineer with over three years of experience building and supporting production web applications. I work mainly with modern web technologies such as React, C#, Blazor, ASP.NET Core, and cloud-based services, and I have a strong appreciation for front-end development. I enjoy working on user interfaces, turning designs into clean, responsive experiences, and making sure the systems behind them work as expected. I’m naturally talkative, approachable, and enjoy working with people, whether that’s collaborating with teammates or learning from others."
   },
   {
-    "q": "What do you specialize in?",
-    "a": "I specialize in React, modern CSS, and building structured front-end systems that scale.derz"
+    "q": "Professional Work Experience",
+    "a": "I’ve worked on both public-facing platforms and internal enterprise systems. At Digital Gaming Corporations SA, I contributed to high-traffic acquisition platforms for Betway and JackpotCity, where I worked on building and maintaining user-facing features, translating designs into responsive interfaces, and supporting cloud-based services in live production environments.\n\nLater, at EXL Services (Ardagh Group), I worked on an internal glass production system used across federated sites worldwide, supporting the production of glass products for wine, spirits, and food industries. This was a production-critical enterprise system where accuracy, stability, and long-term reliability were essential."
   },
   {
-    "q": "What drives your work?",
-    "a": "I enjoy turning complex ideas into simple, elegant interfaces that feel intentional and calm."
+    "q": "My Journey into Software Development",
+    "a": "I began my journey into software development in 2018 through structured training, where I was introduced to programming fundamentals. Over time, my interest shifted toward web development, where I could combine problem-solving with creativity. As I continued learning and building, my perspective broadened to include how frontend, backend, and cloud services work together. This journey shaped how I approach development today: curious, adaptable, and focused on steady improvement."
+  },
+  {
+    "q": "Beyond Software",
+    "a": "Outside of software development, I’m a social and curious person who enjoys connecting with people and making friends. I spend time weight training at the gym, following political developments, and relaxing with movies, WWE, and Got Talent shows. These interests help me stay balanced and grounded, and they influence how I show up at work — open, approachable, and easy to work with."
   }
 ]

@@ -2,12 +2,19 @@ export default function Surface({
   children,
   elevated = false,
   className = "",
+  noPadding = false,
+  ...props
 }) {
   return (
     <div
-      className={`surface rounded-2xl p-6 ${
-        elevated ? "surface--elevated" : ""
-      } ${className}`}
+      {...props}
+      className={`
+        surface
+        rounded-2xl
+        ${noPadding ? "" : "p-6"}
+        ${elevated ? "surface--elevated" : ""}
+        ${className}
+      `}
     >
       {children}
     </div>
