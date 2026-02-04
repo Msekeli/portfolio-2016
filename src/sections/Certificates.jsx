@@ -4,6 +4,7 @@ import SectionTitle from "../components/SectionTitle";
 import Surface from "../components/Surface";
 import Button from "../components/Button";
 import certificates from "../data/certificates.json";
+import { MotionContainer, MotionItem } from "../animations/Motion";
 
 export default function Certificates() {
   const [showAll, setShowAll] = useState(false);
@@ -12,7 +13,7 @@ export default function Certificates() {
 
   const visibleCertificates = showAll ? certificates : certificates.slice(0, 6);
 
-  // Detect desktop (Tailwind lg breakpoint)
+  // Detect desktop (lg breakpoint)
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 1024px)");
     const handleChange = () => setIsDesktop(mediaQuery.matches);
@@ -39,36 +40,39 @@ export default function Certificates() {
 
       {/* LOCAL POSITIONING CONTEXT */}
       <div className="relative">
-        {/* GRID */}
-        <div
-          className={`
-            grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6
-            transition-opacity duration-300
-            ${activeCert ? "opacity-30 pointer-events-none" : ""}
-          `}
-        >
-          {visibleCertificates.map((cert) => (
-            <Surface
-              key={cert.id}
-              noPadding
-              onClick={isDesktop ? () => setActiveCert(cert) : undefined}
-              className={`
-                gold-glow
-                interactive
-                transition-transform duration-300
-                ${isDesktop ? "cursor-pointer hover:scale-105" : ""}
-              `}
-            >
-              <div className="w-full aspect-4/3 flex items-center justify-center">
-                <img
-                  src={cert.image}
-                  alt={`Certificate ${cert.id}`}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </Surface>
-          ))}
-        </div>
+        {/* ANIMATED GRID */}
+        <MotionContainer>
+          <div
+            className={`
+              grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6
+              transition-opacity duration-300
+              ${activeCert ? "opacity-30 pointer-events-none" : ""}
+            `}
+          >
+            {visibleCertificates.map((cert) => (
+              <MotionItem key={cert.id}>
+                <Surface
+                  noPadding
+                  onClick={isDesktop ? () => setActiveCert(cert) : undefined}
+                  className={`
+                    gold-glow
+                    interactive
+                    transition-transform duration-300
+                    ${isDesktop ? "cursor-pointer hover:scale-105" : ""}
+                  `}
+                >
+                  <div className="w-full aspect-4/3 flex items-center justify-center">
+                    <img
+                      src={cert.image}
+                      alt={`Certificate ${cert.id}`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </Surface>
+              </MotionItem>
+            ))}
+          </div>
+        </MotionContainer>
 
         {/* DESKTOP-ONLY FOCUS MODE */}
         {isDesktop && activeCert && (

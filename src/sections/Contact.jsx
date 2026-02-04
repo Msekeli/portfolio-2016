@@ -97,7 +97,7 @@ export default function Contact() {
         <Surface className="overflow-hidden">
           <iframe
             title="Location"
-            src="https://www.google.com/maps?q=Eastern%20Cape%20South%20Africa&output=embed"
+            src="https://www.google.com/maps?q=Salt+River,+Cape+Town,+7925&output=embed"
             className="w-full h-full min-h-80 border-0"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
