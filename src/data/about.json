@@ -1,26 +1,18 @@
 [
   {
-    "q": "Overview",
-    "a": "I am a Full-Stack Software Developer with over two years of experience building modern, scalable, and user-focused web applications. I work across the stack using React.js, Blazor, and ASP.NET Core, with a strong focus on clean architecture, maintainable code, and thoughtful user experiences."
+    "q": "Professional Overview",
+    "a": "I’m a software engineer with over three years of experience building and supporting production web applications. I work mainly with modern web technologies such as React, C#, Blazor, ASP.NET Core, and cloud-based services, and I have a strong appreciation for front-end development. I enjoy working on user interfaces, turning designs into clean, responsive experiences, and making sure the systems behind them work as expected. I’m naturally talkative, approachable, and enjoy working with people, whether that’s collaborating with teammates or learning from others."
   },
   {
-    "q": "Programming Journey",
-    "a": "I began my programming journey in 2018 with Java through a CapaCiTi training program. In 2019, I transitioned into front-end development, learning HTML, CSS, and JavaScript through platforms such as W3Schools, freeCodeCamp, and Udemy. In 2020, I returned to CapaCiTi to further my studies in Computer Programming and AWS, strengthening both my development and cloud fundamentals."
+    "q": "Professional Work Experience",
+    "a": "I’ve worked on both public-facing platforms and internal enterprise systems. At Digital Gaming Corporations SA, I contributed to high-traffic acquisition platforms for Betway and JackpotCity, where I worked on building and maintaining user-facing features, translating designs into responsive interfaces, and supporting cloud-based services in live production environments.\n\nLater, at EXL Services (Ardagh Group), I worked on an internal glass production system used across federated sites worldwide, supporting the production of glass products for wine, spirits, and food industries. This was a production-critical enterprise system where accuracy, stability, and long-term reliability were essential."
   },
   {
-    "q": "Development Experience",
-    "a": "I have worked as a Junior Full-Stack Developer using React.js on the front end and C#.NET on the back end. My experience includes translating Figma designs into responsive interfaces, integrating RESTful APIs, managing relational databases, and troubleshooting production issues to ensure reliable application performance."
+    "q": "My Journey into Software Development",
+    "a": "I began my journey into software development in 2018 through structured training, where I was introduced to programming fundamentals. Over time, my interest shifted toward web development, where I could combine problem-solving with creativity. As I continued learning and building, my perspective broadened to include how frontend, backend, and cloud services work together. This journey shaped how I approach development today: curious, adaptable, and focused on steady improvement."
   },
   {
-    "q": "Professional Background",
-    "a": "At Digital Gaming Corporations SA, I contributed to acquisition websites for Betway and JackpotCity, where I helped develop and maintain features such as the Bonus Wheel and Maintenance Pages. I collaborated closely with designers and developers, coded from Figma designs, and fixed bugs using ASP.NET Core and Next.js. I have also gained valuable industry experience through internships at Mezzanine Ware and RLabs."
-  },
-  {
-    "q": "Skills and Education",
-    "a": "My technical skill set includes React.js, Blazor, JavaScript, TypeScript, HTML, CSS, Tailwind CSS, Bootstrap, C#, ASP.NET Core, Azure Functions, SQL Server, and PostgreSQL. I am experienced with Git, GitHub, Azure DevOps, Jira, Postman, and Requestly, as well as cloud platforms such as Azure and AWS. I hold an NQF Level 5 qualification in IT Systems Development from CTU Training Solutions, achieving an average of 84%, and I am currently completing a Diploma in IT Software Development."
-  },
-  {
-    "q": "Beyond Code",
-    "a": "I am a talkative, creative, and innovative individual who enjoys challenging myself and exploring new ideas. Outside of development, I spend time weight lifting at the gym, following political developments, and relaxing with movies, WWE, and Got Talent shows. These interests fuel my curiosity, discipline, and continuous drive to improve both personally and professionally."
+    "q": "Beyond Software",
+    "a": "Outside of software development, I’m a social and curious person who enjoys connecting with people and making friends. I spend time weight training at the gym, following political developments, and relaxing with movies, WWE, and Got Talent shows. These interests help me stay balanced and grounded, and they influence how I show up at work — open, approachable, and easy to work with."
   }
 ]

@@ -2,7 +2,8 @@ import Footer from "./Footer";
 
 export default function AppShell({ top, nav, children }) {
   return (
-    <div className="h-screen flex flex-col overflow-hidden px-[clamp(1rem,9vw,10%)]">
+    /* Removed the 10% constraint and replaced with responsive padding */
+    <div className="h-screen flex flex-col overflow-hidden px-4 md:px-[clamp(2rem,6vw,8rem)]">
       {/* Global top bar */}
       {top}
 

@@ -22,7 +22,7 @@ export default function DesktopNav() {
 
   return (
     <aside className="hidden md:flex w-24">
-      <div className="mt-24 surface rounded-2xl p-3 flex flex-col gap-4 gold-glow max-h-105 justify-center">
+      <div className="mt-24 ml-15 surface rounded-2xl p-3 flex flex-col gap-4 gold-glow max-h-105 justify-center">
         {items.map(({ id, label, icon }) => {
           const isActive = activeId === id;
 
@@ -47,11 +47,18 @@ export default function DesktopNav() {
                 <Icon name={icon} />
               </div>
 
+              {/* UPDATED LABEL STYLING */}
               <span
                 className="
                   absolute left-14 top-1/2 -translate-y-1/2
                   px-3 py-1 rounded-md surface
                   text-text-primary text-sm
+                  
+                  /* Added styles */
+                  font-bold
+                  border border-gold-main/50
+                  shadow-[0_0_10px_rgba(212,175,55,0.2)]
+                  
                   opacity-0 translate-x-2
                   group-hover:opacity-100 group-hover:translate-x-0
                   transition-all whitespace-nowrap

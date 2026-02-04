@@ -99,6 +99,10 @@ export default function Contact() {
             title="Location"
             src="https://www.google.com/maps?q=Salt+River,+Cape+Town,+7925&output=embed"
             className="w-full h-full min-h-80 border-0"
+            style={{
+              filter:
+                "invert(90%) hue-rotate(210deg) brightness(85%) contrast(110%)",
+            }}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />

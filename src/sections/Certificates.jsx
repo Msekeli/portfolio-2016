@@ -2,127 +2,91 @@ import { useState, useEffect } from "react";
 import Section from "../components/Section";
 import SectionTitle from "../components/SectionTitle";
 import Surface from "../components/Surface";
-import Button from "../components/Button";
 import certificates from "../data/certificates.json";
-import { MotionContainer, MotionItem } from "../animations/Motion";
 
 export default function Certificates() {
-  const [showAll, setShowAll] = useState(false);
   const [activeCert, setActiveCert] = useState(null);
-  const [isDesktop, setIsDesktop] = useState(false);
 
-  const visibleCertificates = showAll ? certificates : certificates.slice(0, 6);
-
-  // Detect desktop (lg breakpoint)
+  // ESC to close
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 1024px)");
-    const handleChange = () => setIsDesktop(mediaQuery.matches);
-
-    handleChange();
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, []);
-
-  // ESC to close (desktop only)
-  useEffect(() => {
-    if (!isDesktop) return;
-
     const handleEsc = (e) => {
       if (e.key === "Escape") setActiveCert(null);
     };
     window.addEventListener("keydown", handleEsc);
     return () => window.removeEventListener("keydown", handleEsc);
-  }, [isDesktop]);
+  }, []);
 
   return (
     <Section id="certificates">
       <SectionTitle>Certificates</SectionTitle>
 
-      {/* LOCAL POSITIONING CONTEXT */}
       <div className="relative">
-        {/* ANIMATED GRID */}
-        <MotionContainer>
-          <div
-            className={`
-              grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6
-              transition-opacity duration-300
-              ${activeCert ? "opacity-30 pointer-events-none" : ""}
-            `}
-          >
-            {visibleCertificates.map((cert) => (
-              <MotionItem key={cert.id}>
-                <Surface
-                  noPadding
-                  onClick={isDesktop ? () => setActiveCert(cert) : undefined}
-                  className={`
-                    gold-glow
-                    interactive
-                    transition-transform duration-300
-                    ${isDesktop ? "cursor-pointer hover:scale-105" : ""}
-                  `}
-                >
-                  <div className="w-full aspect-4/3 flex items-center justify-center">
-                    <img
-                      src={cert.image}
-                      alt={`Certificate ${cert.id}`}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                </Surface>
-              </MotionItem>
-            ))}
-          </div>
-        </MotionContainer>
+        {/* FORCED 4 COLUMNS ON DESKTOP/BIG SCREENS */}
+        <div
+          className={`
+            grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6
+            transition-opacity duration-300
+            ${activeCert ? "opacity-10 pointer-events-none" : "opacity-100"}
+          `}
+        >
+          {certificates.map((cert) => (
+            <div key={cert.id}>
+              <Surface
+                noPadding
+                onClick={() => setActiveCert(cert)}
+                className="gold-glow interactive cursor-pointer transition-transform duration-300 hover:scale-105"
+              >
+                <div className="w-full aspect-4/3 flex items-center justify-center bg-black/20">
+                  <img
+                    src={cert.image}
+                    alt={`Certificate ${cert.id}`}
+                    className="w-full h-full object-contain p-2"
+                  />
+                </div>
+              </Surface>
+            </div>
+          ))}
+        </div>
 
-        {/* DESKTOP-ONLY FOCUS MODE */}
-        {isDesktop && activeCert && (
+        {/* CENTERED OVERLAY WITHIN SECTION */}
+        {activeCert && (
           <div
             className="
-              absolute inset-0 z-50
-              flex items-start justify-center
-              bg-black/60 backdrop-blur-sm
-              pt-16 lg:pt-24
+              absolute inset-0 z-40
+              flex items-center justify-center
+              bg-black/30 backdrop-blur-sm
+              rounded-2xl
             "
             onClick={() => setActiveCert(null)}
           >
             <Surface
               noPadding
               elevated
-              className="
-                gold-glow
-                relative
-                max-w-3xl w-[90%]
-              "
+              className="gold-glow relative max-w-4xl w-[90%] shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="w-full aspect-4/3 flex items-center justify-center p-6">
+              <div className="w-full flex items-center justify-center p-2">
                 <img
                   src={activeCert.image}
                   alt="Certificate preview"
-                  className="w-full h-full object-contain"
+                  className="max-w-full max-h-[70vh] object-contain"
                 />
               </div>
 
               <button
                 onClick={() => setActiveCert(null)}
                 className="
-                  absolute top-4 right-4
-                  text-white/80 hover:text-white
-                  text-xl
+                  absolute -top-12 right-0
+                  text-white/70 hover:text-white
+                  flex items-center gap-2 text-sm uppercase tracking-widest
                 "
               >
-                ✕
+                <span>Close</span>
+                <span className="text-2xl">✕</span>
               </button>
             </Surface>
           </div>
         )}
-      </div>
-
-      {/* VIEW MORE / LESS */}
-      <div className="mt-16 flex justify-center relative z-10">
-        <Button onClick={() => setShowAll((prev) => !prev)}>
-          {showAll ? "View Less" : "View More"}
-        </Button>
       </div>
     </Section>
   );

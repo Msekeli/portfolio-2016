@@ -4,13 +4,16 @@ export default function TopBar() {
   return (
     <header className="w-screen relative left-1/2 -translate-x-1/2 surface border-b border-gold-main/20">
       <div className="h-14 flex items-center justify-between px-[clamp(1rem,9vw,10%)]">
-        <span className="font-medium tracking-wide text-text-primary">
-          MSEKELI
-        </span>
+        {/* Logo */}
+        <img
+          src="/images/logo.png"
+          alt="Msekeli logo"
+          className="h-15 w-auto"
+        />
 
         <nav className="flex items-center gap-4">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Msekeli"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
@@ -20,7 +23,7 @@ export default function TopBar() {
           </a>
 
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/msekeli-mkwibiso/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
@@ -30,7 +33,7 @@ export default function TopBar() {
           </a>
 
           <a
-            href="mailto:youremail@example.com"
+            href="mailto:msekeli14@gmail.com"
             aria-label="Send email"
             className="text-text-primary hover:text-gold-main transition-colors"
           >
