@@ -46,6 +46,17 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      {/* decoration line for space */}
+      <div className="w-full min-h-32 relative hidden md:block">
+        <div
+          className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-[70%] h-[1.5px]"
+          style={{
+            background: "var(--gradient-gold)",
+            boxShadow: "var(--glow-gold-soft)",
+            opacity: 0.9,
+          }}
+        />
+      </div>
     </Section>
   );
 }
