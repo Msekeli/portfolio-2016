@@ -18,13 +18,14 @@ export default function Button({
   };
 
   const baseClasses = `
-    px-4 py-2
-    rounded-md
-    whitespace-nowrap
-    interactive
-    cursor-pointer
-    text-sm
-  `;
+  inline-flex items-center gap-2
+  px-4 py-2
+  rounded-md
+  whitespace-nowrap
+  interactive
+  cursor-pointer
+  text-sm
+`;
 
   const variants = {
     primary: `

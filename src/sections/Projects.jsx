@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Section from "../components/Section";
 import SectionTitle from "../components/SectionTitle";
 import Text from "../components/Text";
@@ -10,36 +10,54 @@ import projects from "../data/projects.json";
 export default function Projects() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState("next");
+  const [perPage, setPerPage] = useState(2);
 
   const total = projects.length;
-  const visible = projects.slice(index, index + 2);
+
+  // Responsive projects per page
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth < 768) {
+        setPerPage(1);
+      } else {
+        setPerPage(2);
+      }
+    };
+
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const visible = projects.slice(index, index + perPage);
 
   const next = () => {
-    if (index + 2 < total) {
+    if (index + perPage < total) {
       setDirection("next");
-      setIndex(index + 2);
+      setIndex(index + perPage);
     }
   };
 
   const prev = () => {
-    if (index - 2 >= 0) {
+    if (index - perPage >= 0) {
       setDirection("prev");
-      setIndex(index - 2);
+      setIndex(index - perPage);
     }
   };
 
   return (
     <Section id="projects">
-      <div className="flex flex-col h-[75vh]">
+      <div className="flex flex-col">
         {/* Controller */}
         <div className="flex items-center justify-between mb-1">
           <SectionTitle>Projects</SectionTitle>
 
           <span className="text-sm text-text-secondary">
-            {index + 1}-{Math.min(index + 2, total)} of {total}
+            {index + 1}-{Math.min(index + perPage, total)} of {total}
           </span>
         </div>
 
+        {/* Navigation */}
         <div className="flex justify-between mb-3">
           <button
             onClick={prev}
@@ -51,7 +69,7 @@ export default function Projects() {
 
           <button
             onClick={next}
-            disabled={index + 2 >= total}
+            disabled={index + perPage >= total}
             className="text-sm text-text-secondary hover:text-gold-main disabled:opacity-30"
           >
             Next →
@@ -61,33 +79,40 @@ export default function Projects() {
         {/* Divider */}
         <div className="border-b border-borderColor mb-4"></div>
 
-        {/* Animated Project Grid */}
+        {/* Projects */}
         <div
           key={index}
           className={`
-            grid grid-cols-1 md:grid-cols-2 gap-6 flex-1
+            grid grid-cols-1 md:grid-cols-2 gap-6
             ${direction === "next" ? "animate-slide-left" : "animate-slide-right"}
           `}
         >
           {visible.map((project) => (
-            <Surface key={project.title} className="group hover:gold-glow">
+            <Surface
+              key={project.title}
+              elevated
+              className="group flex flex-col hover:gold-glow transition"
+            >
               {/* Image */}
-              <div className="h-27.5 overflow-hidden rounded-lg">
+              <div className="aspect-video overflow-hidden rounded-lg">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
 
-              <div className="mt-3 space-y-2">
+              <div className="mt-3 space-y-2 flex flex-col grow">
                 {/* Title */}
                 <h3 className="text-sm font-medium text-text-primary">
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <Text variant="secondary" className="text-sm leading-relaxed">
+                <Text
+                  variant="secondary"
+                  className="text-sm leading-relaxed line-clamp-3"
+                >
                   {project.description}
                 </Text>
 
@@ -104,7 +129,7 @@ export default function Projects() {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex gap-2 pt-2">
+                <div className="flex gap-2 pt-2 mt-auto">
                   {project.demo && (
                     <a
                       href={project.demo}
@@ -113,6 +138,7 @@ export default function Projects() {
                     >
                       <Button variant="primary">
                         <Icon name="ExternalLink" />
+                        Live Demo
                       </Button>
                     </a>
                   )}
@@ -125,6 +151,7 @@ export default function Projects() {
                     >
                       <Button variant="secondary">
                         <Icon name="Github" />
+                        Source Code
                       </Button>
                     </a>
                   )}
