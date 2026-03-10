@@ -6,6 +6,7 @@ import Surface from "../components/Surface";
 import Button from "../components/Button";
 import Icon from "../components/Icon";
 import projects from "../data/projects.json";
+import { track } from "@vercel/analytics";
 
 export default function Projects() {
   const [index, setIndex] = useState(0);
@@ -136,7 +137,14 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Button variant="primary">
+                      <Button
+                        variant="primary"
+                        onClick={() =>
+                          track("project_demo_click", {
+                            project: project.title,
+                          })
+                        }
+                      >
                         <Icon name="ExternalLink" />
                         Live Demo
                       </Button>
@@ -149,7 +157,14 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Button variant="secondary">
+                      <Button
+                        variant="secondary"
+                        onClick={() =>
+                          track("project_repo_click", {
+                            project: project.title,
+                          })
+                        }
+                      >
                         <Icon name="Github" />
                         Source Code
                       </Button>
