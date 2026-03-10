@@ -5,26 +5,24 @@ import hero from "../data/hero.json";
 
 export default function Hero() {
   return (
-    <Section id="home" fullHeight>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Text block */}
-        <div className="space-y-6">
+    <Section id="home">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Text */}
+        <div className="space-y-6 max-w-xl">
           <Text variant="secondary">{hero.greeting}</Text>
 
-          <h1 className="text-4xl md:text-5xl font-semibold gold-accent">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold gold-accent leading-tight">
             {hero.name}
           </h1>
 
-          {/* Headline / role */}
-          <h2 className="text-xl md:text-2xl font-medium text-text-secondary">
+          <h2 className="text-xl lg:text-2xl font-medium text-text-secondary">
             {hero.headline}
           </h2>
 
-          <Text>{hero.description}</Text>
+          <Text className="max-w-lg">{hero.description}</Text>
 
-          {/* Tech stack tag */}
           {Array.isArray(hero.techStack) && (
-            <div className="pt-2 hidden md:block">
+            <div className="pt-2 hidden lg:block">
               <span className="tag">
                 <span className="tag-label">{hero.techStackLabel}</span>
                 <span className="tag-value">{hero.techStack.join(" · ")}</span>
@@ -32,30 +30,21 @@ export default function Hero() {
             </div>
           )}
 
-          <Button to="projects">{hero.cta}</Button>
+          <div className="pt-2">
+            <Button to="projects">{hero.cta}</Button>
+          </div>
         </div>
 
-        {/* Image block */}
-        <div className="w-full">
-          <div className="w-full surface rounded-2xl gold-glow p-6">
+        {/* Image */}
+        <div className="w-full lg:max-w-md lg:ml-auto">
+          <div className="surface rounded-2xl gold-glow p-6">
             <img
               src="/images/hero.png"
               alt="Hero illustration"
-              className="w-full h-auto"
+              className="w-full h-auto object-contain"
             />
           </div>
         </div>
-      </div>
-      {/* decoration line for space */}
-      <div className="w-full min-h-32 relative hidden md:block">
-        <div
-          className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-[70%] h-[1.5px]"
-          style={{
-            background: "var(--gradient-gold)",
-            boxShadow: "var(--glow-gold-soft)",
-            opacity: 0.9,
-          }}
-        />
       </div>
     </Section>
   );

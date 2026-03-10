@@ -6,7 +6,7 @@ import Surface from "../components/Surface";
 import Button from "../components/Button";
 
 export default function Contact() {
-  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [status, setStatus] = useState("idle");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -23,15 +23,26 @@ export default function Contact() {
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(payload),
       });
 
-      if (!res.ok) throw new Error("Request failed");
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error("Failed request");
+      }
 
       form.reset();
       setStatus("success");
-    } catch {
+
+      setTimeout(() => {
+        setStatus("idle");
+      }, 4000);
+    } catch (error) {
+      console.error(error);
       setStatus("error");
     }
   }
@@ -97,13 +108,12 @@ export default function Contact() {
         <Surface className="overflow-hidden">
           <iframe
             title="Location"
-            src="https://www.google.com/maps?q=Salt+River,+Cape+Town,+7925&output=embed"
+            src="https://www.google.com/maps?q=Salt+River,+Cape+Town,+7925&z=14&output=embed"
             className="w-full h-full min-h-80 border-0"
             style={{
               filter:
                 "invert(90%) hue-rotate(210deg) brightness(85%) contrast(110%)",
             }}
-            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
         </Surface>
