@@ -16,7 +16,9 @@ export default function DesktopNav() {
     const el = document.getElementById(id);
     if (!el) return;
 
-    el.scrollIntoView({ behavior: "smooth" });
+    // instant navigation (feels much faster)
+    el.scrollIntoView({ behavior: "auto", block: "start" });
+
     history.replaceState(null, "", location.pathname);
   };
 
@@ -30,7 +32,14 @@ export default function DesktopNav() {
             <button
               key={id}
               onClick={() => handleClick(id)}
-              className="group relative flex items-center justify-center w-14 h-14 cursor-pointer interactive"
+              className="
+                group relative
+                flex items-center justify-center
+                w-14 h-14
+                cursor-pointer
+                transition-transform duration-100
+                active:scale-95
+              "
             >
               {/* Icon circle */}
               <div
@@ -38,6 +47,8 @@ export default function DesktopNav() {
                   w-12 h-12 rounded-full
                   flex items-center justify-center
                   border
+                  transition-all duration-100
+                  group-hover:scale-105
                   ${
                     isActive
                       ? "border-gold-main text-gold-main gold-glow"
@@ -48,7 +59,7 @@ export default function DesktopNav() {
                 <Icon name={icon} />
               </div>
 
-              {/* Tooltip label */}
+              {/* Tooltip */}
               <span
                 className="
                   absolute left-16 top-1/2 -translate-y-1/2
@@ -58,7 +69,9 @@ export default function DesktopNav() {
                   shadow-[0_0_10px_rgba(212,175,55,0.2)]
                   opacity-0 translate-x-2
                   group-hover:opacity-100 group-hover:translate-x-0
-                  transition-all duration-150 whitespace-nowrap
+                  transition-all duration-150
+                  whitespace-nowrap
+                  pointer-events-none
                 "
               >
                 {label}

@@ -12,12 +12,12 @@ export default function About() {
     <Section id="about">
       <SectionTitle>About</SectionTitle>
 
-      <div className="space-y-4 stagger">
+      <div className="space-y-4">
         {items.map((item, index) => {
           const open = openIndex === index;
 
           return (
-            <div key={item.q} className="animate-slide-up">
+            <div key={item.q}>
               <Surface
                 elevated={open}
                 className={open ? "gold-glow border border-gold-main/30" : ""}
